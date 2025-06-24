@@ -1,5 +1,8 @@
 package com.ajayak.springBootDemo;
 
+import com.ajayak.springBootDemo.model.Alien;
+import com.ajayak.springBootDemo.model.Laptop;
+import com.ajayak.springBootDemo.service.LaptopService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,6 +17,10 @@ public class SpringBootDemoApplication {
         Alien obj = context.getBean(Alien.class);
         obj.code();
 
+        LaptopService laptopService = context.getBean(LaptopService.class);
+
+        Laptop lap = context.getBean(Laptop.class);
+        laptopService.addLaptop(lap);
         System.out.println("Hello World");
 
 
